@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jumar Gatdula | Virtual Assistant Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f172a;
+    --blue:#3b5bfd;
+    --blue-dark:#2540c9;
+    --lav:#eef0fc;
+    --lav-2:#e7eafc;
+    --grey:#5b6478;
+    --white:#ffffff;
+    --line:#e3e6f3;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--navy);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  section{padding:96px 0;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
+  .logo{font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;color:var(--blue);letter-spacing:1px;}
+  .navlinks{display:flex;gap:36px;list-style:none;margin:0;padding:0;}
+  .navlinks a{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);opacity:0.85;transition:opacity .2s, color .2s;}
+  .navlinks a:hover{opacity:1;color:var(--blue);}
+  .navtoggle{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:var(--navy);}
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,var(--lav) 0%, #f4f5fd 100%);padding:72px 0 88px;position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;}
+  .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);background:var(--lav-2);padding:6px 14px;border-radius:999px;margin-bottom:20px;}
+  .hero h1{font-size:56px;line-height:1.02;margin-bottom:6px;color:var(--navy);}
+  .hero-role{font-size:19px;font-weight:600;color:var(--blue);font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;margin-bottom:22px;}
+  .hero p.lead{font-size:16.5px;line-height:1.75;color:var(--grey);max-width:560px;margin-bottom:26px;}
+  .contact-row{display:flex;flex-wrap:wrap;gap:22px;margin-bottom:28px;font-size:14.5px;color:var(--navy);}
+  .contact-row a,.contact-row span{display:flex;align-items:center;gap:7px;}
+  .contact-row .ico{font-size:15px;}
+  .chips{display:flex;flex-wrap:wrap;gap:12px;}
+  .chip{background:var(--white);border:1px solid var(--line);color:var(--blue-dark);font-weight:600;font-size:13.5px;padding:11px 18px;border-radius:999px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+
+  .hero-photo-wrap{position:relative;display:flex;justify-content:center;}
+  .hero-photo{
+    width:100%;max-width:400px;aspect-ratio:1/1;border-radius:50%;
+    overflow:hidden;border:5px solid var(--blue);
+    box-shadow:0 20px 45px rgba(59,91,253,.18);
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line);padding-top:40px;}
+  .stat{text-align:center;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:'Oswald',sans-serif;font-size:34px;font-weight:700;color:var(--blue);}
+  .stat .label{font-size:13px;color:var(--grey);margin-top:4px;}
+
+  /* Section heading */
+  .head{margin-bottom:48px;}
+  .head .eyebrow{margin-bottom:14px;}
+  .head h2{font-size:40px;color:var(--navy);margin-bottom:14px;}
+  .head p{font-size:16px;color:var(--grey);max-width:560px;line-height:1.7;}
+  .section-alt{background:var(--lav);}
+
+  /* Core strengths */
+  .strengths-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 24px rgba(15,23,42,.05);}
+  .strength{padding:44px 40px;position:relative;border-right:1px solid var(--line);}
+  .strength:last-child{border-right:none;}
+  .strength .num{position:absolute;top:24px;right:32px;font-family:'Oswald',sans-serif;font-size:52px;font-weight:700;color:#eef0fc;}
+  .strength .emoji{font-size:30px;margin-bottom:22px;}
+  .strength h3{font-size:20px;margin-bottom:20px;color:var(--navy);}
+  .strength ul{list-style:none;margin:0;padding:0;}
+  .strength li{padding:12px 0;border-top:1px solid var(--line);font-size:15px;color:var(--navy);display:flex;gap:10px;align-items:baseline;}
+  .strength li:first-child{border-top:none;}
+  .strength li:before{content:"→";color:var(--blue);font-weight:600;}
+
+  /* Tools marquee */
+  .tools-head{text-align:center;margin:0 auto 52px;max-width:640px;}
+  .tools-head .eyebrow{display:inline-flex;align-items:center;gap:8px;}
+  .marquee-row{overflow:hidden;position:relative;margin-bottom:16px;-webkit-mask-image:linear-gradient(90deg,transparent,black 6%,black 94%,transparent);mask-image:linear-gradient(90deg,transparent,black 6%,black 94%,transparent);}
+  .marquee-track{display:flex;gap:14px;width:max-content;animation:scroll 42s linear infinite;}
+  .marquee-row.rev .marquee-track{animation-direction:reverse;animation-duration:48s;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .tool-pill{display:flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--line);padding:11px 20px;border-radius:999px;font-weight:600;font-size:14px;white-space:nowrap;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .tool-pill img{width:18px;height:18px;object-fit:contain;filter:none;}
+
+  /* Work */
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .work-card{border-radius:var(--radius);overflow:hidden;background:var(--lav);border:1px solid var(--line);box-shadow:0 4px 20px rgba(15,23,42,.05);}
+  .work-card img{width:100%;height:280px;object-fit:cover;object-position:top;}
+  .work-card.wide{grid-column:span 2;}
+  .work-card.wide img{height:280px;object-fit:contain;background:#fff;}
+  .work-caption{padding:16px 20px;font-size:14px;font-weight:600;color:var(--navy);border-top:1px solid var(--line);}
+
+  /* Certs */
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .cert-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 20px rgba(15,23,42,.05);transition:transform .2s;}
+  .cert-card img{width:100%;height:220px;object-fit:cover;object-position:top;background:#0b0b12;}
+  .cert-body{padding:18px 20px;}
+  .cert-body h4{font-family:'Oswald',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+  .cert-body p{margin:0;font-size:13.5px;color:var(--grey);}
+
+  /* Reviews */
+  .review-card{max-width:760px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 6px 28px rgba(15,23,42,.06);overflow:hidden;}
+  .review-top{display:flex;align-items:center;gap:12px;padding:20px 26px;border-bottom:1px solid var(--line);}
+  .review-avatar{width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;}
+  .review-top .who b{display:block;font-size:14.5px;}
+  .review-top .who span{font-size:12.5px;color:var(--grey);}
+  .review-body{padding:24px 26px;}
+  .review-author{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .review-author .review-avatar{background:#dbe1fb;color:var(--blue-dark);}
+  .review-quote-name{font-size:13.5px;color:var(--grey);margin-bottom:2px;}
+  .review-body p{font-size:14.5px;line-height:1.75;color:var(--navy);margin:0 0 14px;}
+  .review-body p:last-of-type{margin-bottom:0;}
+  .review-sig{margin-top:16px;font-size:13.5px;color:var(--grey);}
+  .review-footer{padding:20px 26px;border-top:1px solid var(--line);}
+  .review-footer b{display:block;font-size:15px;}
+  .review-footer span{font-size:13px;color:var(--grey);}
+
+  /* Contact / CTA */
+  .cta{background:linear-gradient(180deg,var(--lav) 0%,#f4f5fd 100%);text-align:center;position:relative;overflow:hidden;}
+  .cta-watermark{position:absolute;top:52%;left:50%;transform:translate(-50%,-50%);font-family:'Oswald',sans-serif;font-weight:700;font-size:150px;color:rgba(59,91,253,.05);letter-spacing:4px;white-space:nowrap;pointer-events:none;}
+  .cta .eyebrow{margin-bottom:18px;}
+  .cta h2{font-size:52px;margin-bottom:20px;}
+  .cta h2 span{color:var(--blue);}
+  .cta p{max-width:600px;margin:0 auto 40px;color:var(--grey);font-size:16.5px;line-height:1.75;}
+  .cta-links{display:flex;justify-content:center;flex-wrap:wrap;gap:52px;position:relative;}
+  .cta-links a,.cta-links span{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:1px;color:var(--navy);}
+  .cta-links .ico{font-size:24px;}
+
+  footer{padding:56px 0 40px;text-align:center;}
+  footer .fname{font-family:'Oswald',sans-serif;font-size:26px;font-weight:700;color:var(--blue);margin-bottom:10px;}
+  footer .fnote{font-size:13px;color:var(--grey);}
+
+  @media (max-width:900px){
+    .navlinks{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo-wrap{order:-1;}
+    .hero h1{font-size:40px;}
+    .stats{grid-template-columns:repeat(2,1fr);row-gap:28px;}
+    .stat:nth-child(2){border-right:none;}
+    .strengths-grid{grid-template-columns:1fr;}
+    .strength{border-right:none;border-bottom:1px solid var(--line);}
+    .work-grid,.cert-grid{grid-template-columns:1fr;}
+    .work-card.wide{grid-column:span 1;}
+    .cta h2{font-size:34px;}
+    .cta-watermark{font-size:80px;}
+    section{padding:64px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">JG</div>
+    <ul class="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#certs">Certs</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="about">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Administrative Virtual Assistant</span>
+        <h1>Jumar Gatdula</h1>
+        <div class="hero-role">Virtual Assistant</div>
+        <p class="lead">Highly organized and dependable Virtual Assistant with 9 years of professional experience supporting customer service, administrative operations, and business workflows. Skilled in calendar and email management, customer communication, data entry, CRM systems, project management tools, and keeping multiple tasks organized and on track.</p>
+        <div class="contact-row">
+          <a href="mailto:jgatdula.ix@gmail.com"><span class="ico">✉</span> jgatdula.ix@gmail.com</a>
+          <span><span class="ico">📞</span> +639542397656</span>
+          <span><span class="ico">📍</span> Philippines</span>
+          <a href="https://www.linkedin.com/in/jgatdulaix/" target="_blank" rel="noopener"><span class="ico">💼</span> LinkedIn</a>
+        </div>
+        <div class="chips">
+          <span class="chip">Inbox Zero Management</span>
+          <span class="chip">Calendar &amp; Scheduling Management</span>
+          <span class="chip">Client Communication &amp; Follow up</span>
+          <span class="chip">Data Entry &amp; CRM</span>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo">
+          <img src="assets/profile.jpg" alt="Jumar Gatdula">
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="num">10+</div><div class="label">Years Experience</div></div>
+      <div class="stat"><div class="num">1+</div><div class="label">Clients Served</div></div>
+      <div class="stat"><div class="num">28+</div><div class="label">Tools Mastered</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">Client Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">What I Do Best</span>
+      <h2>Core Strengths</h2>
+      <p>The key competencies that make me an indispensable asset to your business.</p>
+    </div>
+    <div class="strengths-grid">
+      <div class="strength">
+        <div class="num">01</div>
+        <div class="emoji">🗂️</div>
+        <h3>Organisation &amp; Admin</h3>
+        <ul>
+          <li>Inbox Zero Management</li>
+          <li>Calendar &amp; Scheduling Management</li>
+        </ul>
+      </div>
+      <div class="strength">
+        <div class="num">02</div>
+        <div class="emoji">📅</div>
+        <h3>Workflow &amp; Systems</h3>
+        <ul>
+          <li>Client Communication &amp; Follow up</li>
+          <li>Data Entry &amp; CRM</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="tools-head">
+      <span class="eyebrow">My Arsenal</span>
+      <h2>Tools I Master</h2>
+      <p>The industry-standard platforms I work with daily to keep your business running like clockwork.</p>
+    </div>
+
+    <div class="marquee-row">
+      <div class="marquee-track" id="row1"></div>
+    </div>
+    <div class="marquee-row rev">
+      <div class="marquee-track" id="row2"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="work">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Sample Work</h2>
+      <p>A glimpse into work I've delivered for clients.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <img src="assets/work-calendar.png" alt="Google Calendar scheduling management sample">
+        <div class="work-caption">Calendar &amp; Scheduling Management</div>
+      </div>
+      <div class="work-card">
+        <img src="https://imlvplrf2fugsihe.public.blob.vercel-storage.com/sample-1-1788268984719.png" alt="TitoMorphosis Inc. logo design">
+        <div class="work-caption">Brand Logo Design — TitoMorphosis Inc.</div>
+      </div>
+      <div class="work-card">
+        <img src="https://imlvplrf2fugsihe.public.blob.vercel-storage.com/sample-2-1788268991924.png" alt="TitoMorphosis product photography">
+        <div class="work-caption">Social Media Product Shot — TitoMorphosis Inc.</div>
+      </div>
+      <div class="work-card wide">
+        <img src="assets/work-designs.png" alt="Social media graphic design samples">
+        <div class="work-caption">Social Media Graphics &amp; Photo Editing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Proof of Skill</span>
+      <h2>Certifications</h2>
+      <p>Training and assessments that back up the skills above.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <img src="assets/cert-smm.png" alt="Social Media Manager Certificate">
+        <div class="cert-body">
+          <h4>Social Media Manager</h4>
+          <p>Social Media Management — 101 · Reneissance VA</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <img src="assets/cert-va.jpeg" alt="Virtual Assistant Certificate">
+        <div class="cert-body">
+          <h4>Virtual Assistant</h4>
+          <p>Virtual Assistant Professional Training · Reneissance VA</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <img src="assets/cert-efset.png" alt="EF SET English Certificate">
+        <div class="cert-body">
+          <h4>EF SET English Certificate</h4>
+          <p>73/100 · C2 Proficient</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <img src="assets/cert-high5.png" alt="HIGH5 Strengths Certificate">
+        <div class="cert-body">
+          <h4>HIGH5 Strengths Certificate</h4>
+          <p>Empathizer · Time Keeper · Commander · Philomath · Optimist</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <img src="assets/cert-grammar.png" alt="English Grammar and Vocabulary Test">
+        <div class="cert-body">
+          <h4>English Grammar &amp; Vocabulary Test</h4>
+          <p>Level C2 — Advanced / Mastery</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <img src="assets/cert-cbva.png" alt="CBVA English Language Skills Assessment">
+        <div class="cert-body">
+          <h4>CBVA English Language Skills Assessment</h4>
+          <p>37/40 points</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="reviews">
+  <div class="wrap">
+    <div class="head" style="text-align:center;margin-left:auto;margin-right:auto;">
+      <span class="eyebrow">Social Proof</span>
+      <h2>Client Reviews</h2>
+      <p style="margin-left:auto;margin-right:auto;">Real words from real clients I've had the pleasure of working with.</p>
+    </div>
+
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">JG</div>
+        <div class="who">
+          <b>Jumar Gatdula</b>
+          <span>Account Executive | Healthcare</span>
+        </div>
+      </div>
+      <div class="review-body">
+        <div class="review-author">
+          <div class="review-avatar">JH</div>
+          <div>
+            <div style="font-weight:700;font-size:14.5px;">Jennifer Howle <span style="color:var(--blue);">✓</span></div>
+            <div class="review-quote-name">Executive Leadership Experience | Expert in Healthcare Sales! National Sales Manager, Specialty Pharmacy, Infusion, Diagnostic, Medical Device, Pharmaceutical, Hospital, Home Health.</div>
+          </div>
+        </div>
+        <p>I had the pleasure of working with Jumar at Frontera Strategies. He was my direct report as an Account Manager.</p>
+        <p>From the start, Jumar was someone I knew I could count on. He handled a wide range of day-to-day tasks, from data entry and lead generation to researching patient information through our EMR partners. Many of these tasks required accuracy, consistency, and good time management, and he always approached them with care.</p>
+        <p>What stood out to me was his willingness to learn and take ownership of his work. He didn't need constant follow-ups and was always open to feedback. If priorities changed or something new came up, he adapted quickly and kept things moving without making it a problem.</p>
+        <p>Jumar was the ideal employee. He communicated well, stayed professional, contributed positively to the team and went above and beyond his daily job responsibilities. Those qualities made him someone I trusted to handle his role independently.</p>
+        <p>I genuinely enjoyed working with Jumar and would gladly recommend him to any employer looking for someone who is dependable, detail-oriented, and committed to doing quality work. I wish him nothing but success in whatever comes next!</p>
+        <div class="review-sig">— Jen Howle</div>
+      </div>
+      <div class="review-footer">
+        <b>Jennifer Howle</b>
+        <span>Account Manager</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="cta-watermark">JUMAR</div>
+  <div class="wrap" style="position:relative;">
+    <span class="eyebrow">Let's Work Together</span>
+    <h2>Ready to <span>Level Up?</span></h2>
+    <p>Let's build something exceptional together. I'm available for new projects and long-term partnerships — drop me a message and let's get started.</p>
+    <div class="cta-links">
+      <a href="mailto:jgatdula.ix@gmail.com"><span class="ico">✉</span> jgatdula.ix@gmail.com</a>
+      <span><span class="ico">📞</span> +639542397656</span>
+      <a href="https://www.linkedin.com/in/jgatdulaix/" target="_blank" rel="noopener"><span class="ico">💼</span> LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fname">JUMAR GATDULA</div>
+  <div class="fnote">© 2026 Jumar Gatdula</div>
+</footer>
+
+<script>
+  const gmail = 'https://cdn.simpleicons.org/gmail/3b5bfd';
+  const tools1 = [
+    ['Gmail','gmail'],['Microsoft Outlook','microsoftoutlook'],['Zoom','zoom'],['Slack','slack'],
+    ['Loom','loom'],['Grammarly','grammarly'],['Google Drive','googledrive'],['Google Calendar','googlecalendar'],
+    ['Google Docs','googledocs'],['Google Sheets','googlesheets'],['Google Workspace','googleworkspace'],
+    ['Microsoft Word','microsoftword'],['Microsoft Office','microsoftoffice365'],['Microsoft Excel','microsoftexcel']
+  ];
+  const tools2 = [
+    ['Monday.com','mondaydotcom'],['Notion','notion'],['Trello','trello'],['HubSpot','hubspot'],
+    ['Salesforce','salesforce'],['Go High Level','gohighlevel'],['QuickBooks','quickbooks'],['DocuSign','docusign'],
+    ['Dropbox','dropbox'],['Calendly','calendly'],['Zendesk','zendesk'],['Freshdesk','freshdesk'],
+    ['ChatGPT / AI Tools','openai'],['Gemini AI','googlegemini']
+  ];
+  function buildRow(id, list){
+    const el = document.getElementById(id);
+    const items = [...list, ...list].map(([name, slug]) => `
+      <div class="tool-pill">
+        <img src="https://cdn.simpleicons.org/${slug}/3b5bfd" alt="${name}" loading="lazy">
+        <span>${name}</span>
+      </div>`).join('');
+    el.innerHTML = items;
+  }
+  buildRow('row1', tools1);
+  buildRow('row2', tools2);
+</script>
+
+</body>
+</html>
